@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turismo Mérida, Venezuela</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <h1>Mérida, Venezuela</h1>
+      </div>
+    </header>
+
+    <main class="main-content">
+        <div id="snowflakes-container"></div>
+      <section class="hero">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/El_cruce_de_las_bandas._Merida..jpg/1024px-El_cruce_de_las_bandas._Merida..jpg" alt="Vista panorámica de Mérida" class="hero-background">
+        <div class="hero-content">
+          <h2>Descubre la magia de los Andes venezolanos</h2>
+          <p>Mérida te espera con sus majestuosas montañas, su rica cultura y su gente cálida</p>
+          <button class="hero-button">Planea tu visita</button>
+        </div>
+      </section>
+
+      <section class="attraction bg-light">
+        <div class="attraction-content">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Nuevo_teleferico_merida_mukumbari_febrero_2017_11.png" alt="Teleférico de Mérida" class="attraction-image clip-path-wave-1">
+          <div class="attraction-text">
+            <h3>Teleférico de Mérida</h3>
+            <p>El teleférico más alto y largo del mundo, que te lleva a la cima del Pico Espejo a 4.765 metros sobre el nivel del mar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="attraction bg-lighter">
+        <div class="attraction-content reverse">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Laguna_de_Mucubaj%C3%AD%2C_Merida%2C_Venezuela.jpg/1280px-Laguna_de_Mucubaj%C3%AD%2C_Merida%2C_Venezuela.jpg" alt="Laguna de Mucubají" class="attraction-image clip-path-wave-2">
+          <div class="attraction-text">
+            <h3>Laguna de Mucubají</h3>
+            <p>Un hermoso lago de origen glaciar ubicado en el Parque Nacional Sierra Nevada, perfecto para caminatas y fotografía.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="attraction bg-light">
+        <div class="attraction-content">
+          <img src="https://d2dzi65yjecjnt.cloudfront.net/203366.jpg" alt="Plaza Bolívar" class="attraction-image clip-path-wave-3">
+          <div class="attraction-text">
+            <h3>Plaza Bolívar</h3>
+            <p>El corazón histórico de la ciudad, rodeado de edificios coloniales y la imponente Catedral de Mérida.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="attraction bg-lighter">
+        <div class="attraction-content reverse">
+          <img src="http://www.temporadista.com/scripts/work_spaces/articulos/pico-el-aguila-espectaculo-maravilloso405216.jpg" alt="Pico El Águila" class="attraction-image clip-path-wave-4">
+          <div class="attraction-text">
+            <h3>Pico El Águila</h3>
+            <p>El punto más alto de la carretera transandina, ofrece vistas impresionantes y el Monumento al Cóndor.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="attraction bg-light">
+        <div class="attraction-content">
+          <img src="https://marketingsimulator.net/gabrielagonzalez/wp-content/uploads/sites/442/2017/02/los-aleros-672x372.jpg" alt="Los Aleros" class="attraction-image clip-path-wave-5">
+          <div class="attraction-text">
+            <h3>Los Aleros</h3>
+            <p>Un pintoresco pueblo andino conocido por su arquitectura tradicional y sus famosos dulces típicos.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> Turismo Mérida. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+  
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const snowflakesContainer = document.getElementById('snowflakes-container');
+
+function createSnowflake() {
+    console.log('creando snowflake');
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.innerHTML = '❄️';
+
+  // Ajustes aleatorios para cada copo de nieve
+  
+  const size = Math.random() * 2 + 1; // Tamaño entre 0.2 y 1em
+  snowflake.style.fontSize = `${size}em`;
+  snowflake.style.left = `${Math.random() * 100}vw`; // Posición horizontal aleatoria
+
+  snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Duración aleatoria de caída
+  //snowflake.style.animationDelay = `${Math.random() * 5}s`; // Diferente inicio de animación
+
+  snowflakesContainer.appendChild(snowflake);
+
+  // Eliminar el copo después de que caiga
+  setTimeout(() => {
+    snowflake.remove();
+  }, 5000);
+}
+
+// Generar copos de nieve de forma continua
+setInterval(createSnowflake, 300);
+
+  </script>
+</body>
+</html>
